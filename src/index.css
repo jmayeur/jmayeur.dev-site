@@ -8,7 +8,15 @@
 
 @layer base {
   :root {
+    color-scheme: light dark;
+  }
+
+  :root.dark {
     color-scheme: dark;
+  }
+
+  :root.light {
+    color-scheme: light;
   }
 
   * {
@@ -23,6 +31,11 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background: #faebd7;
+    color: #1e293b;
+  }
+
+  :root.dark body {
     background: #020617;
     color: #e2e8f0;
   }
@@ -76,6 +89,11 @@
     transform: translateY(0);
   }
 
+  :root.light .skip-link {
+    background: #f0f9ff;
+    color: #1e40af;
+  }
+
   .chip-link {
     border: 1px solid rgb(8 145 178 / 0.5);
     background: rgb(8 145 178 / 0.16);
@@ -95,6 +113,18 @@
     border-color: rgb(103 232 249 / 0.65);
   }
 
+  :root.light .chip-link {
+    border: 1px solid rgb(37 99 235 / 0.5);
+    background: rgb(59 130 246 / 0.1);
+    color: #1e40af;
+  }
+
+  :root.light .chip-link:hover {
+    transform: translateY(-1px);
+    background: rgb(59 130 246 / 0.2);
+    border-color: rgb(59 130 246 / 0.8);
+  }
+
   .panel {
     border: 1px solid rgb(51 65 85 / 0.8);
     background: linear-gradient(155deg, rgb(15 23 42 / 0.88), rgb(2 6 23 / 0.8));
@@ -103,15 +133,29 @@
     box-shadow: 0 24px 65px rgb(2 6 23 / 0.4);
   }
 
+  :root.light .panel {
+    border: 1px solid rgb(226 232 240 / 0.8);
+    background: linear-gradient(155deg, rgb(248 250 252 / 0.8), rgb(241 245 249 / 0.7));
+    box-shadow: 0 24px 65px rgb(15 23 42 / 0.08);
+  }
+
   .panel-title {
     margin: 0 0 0.7rem;
     font-size: 1.4rem;
     color: #e2e8f0;
   }
 
+  :root.light .panel-title {
+    color: #1e293b;
+  }
+
   .panel-text {
     margin: 0;
     color: #cbd5e1;
     max-width: 72ch;
+  }
+
+  :root.light .panel-text {
+    color: #475569;
   }
 }
