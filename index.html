@@ -8,8 +8,14 @@
       name="description"
       content="Jeff Mayeur personal website and professional profile."
     />
-    <link rel="canonical" href="https://www.jmayeur.dev/" />
+    <link rel="canonical" href="https://jmayeur.dev/" />
     <title>Jeff Mayeur</title>
+    <script>
+      if (window.location.hostname === 'www.jmayeur.dev') {
+        const target = `https://jmayeur.dev${window.location.pathname}${window.location.search}${window.location.hash}`
+        window.location.replace(target)
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
