@@ -1,0 +1,136 @@
+import React from 'react'
+import { Link } from '@tanstack/react-router'
+
+function ManagementPhilosophyPage() {
+  const [isDark, setIsDark] = React.useState(() => {
+    if (typeof window === 'undefined') return true
+    const stored = localStorage.getItem('theme')
+    if (stored) return stored === 'dark'
+    return true
+  })
+
+  React.useEffect(() => {
+    document.documentElement.classList.toggle('dark', isDark)
+    document.documentElement.classList.toggle('light', !isDark)
+    localStorage.setItem('theme', isDark ? 'dark' : 'light')
+  }, [isDark])
+
+  const bgClass = isDark
+    ? 'bg-slate-950 text-slate-100'
+    : 'text-slate-900'
+
+  const darkGradient =
+    'radial-gradient(circle at 20% 20%,rgba(56,189,248,0.15),transparent 28%),radial-gradient(circle at 80% 0%,rgba(251,146,60,0.15),transparent 26%),linear-gradient(135deg,#020617,#0f172a 45%,#111827)'
+  const lightGradient =
+    'radial-gradient(circle at 20% 20%,rgba(59,130,246,0.08),transparent 28%),radial-gradient(circle at 80% 0%,rgba(168,85,247,0.08),transparent 26%),linear-gradient(135deg,#faebd7,#f5e6d3 45%,#ecdcc8)'
+
+  return (
+    <div className={`relative isolate min-h-screen overflow-x-clip ${bgClass}`}>
+      <a href="#content" className="skip-link">
+        Skip to main content
+      </a>
+
+      <div
+        className="pointer-events-none absolute inset-0 -z-10"
+        style={{ backgroundImage: isDark ? darkGradient : lightGradient }}
+      />
+
+      <header className="mx-auto w-full max-w-5xl px-6 pb-10 pt-12 md:px-10 md:pt-16">
+        <div className="flex items-center justify-between gap-4 mb-4">
+          <Link
+            to="/"
+            className={`flex items-center gap-2 text-sm transition-colors ${
+              isDark
+                ? 'text-slate-400 hover:text-slate-200'
+                : 'text-slate-600 hover:text-slate-900'
+            }`}
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+            Back to Resume
+          </Link>
+          <button
+            onClick={() => setIsDark(!isDark)}
+            className={`p-2 rounded-lg border transition-colors ${
+              isDark
+                ? 'border-slate-600 bg-slate-800/50 hover:bg-slate-700/50 text-slate-300'
+                : 'border-slate-300 bg-slate-200/50 hover:bg-slate-300/50 text-slate-700'
+            }`}
+            aria-label="Toggle dark mode"
+            title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            {isDark ? (
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fillRule="evenodd"
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l-2.12-2.12a1 1 0 00-1.414 1.414l2.12 2.12a1 1 0 001.414-1.414zM2.05 6.464a1 1 0 000-1.414L.636 3.636a1 1 0 00-1.414 1.414l1.414 1.414a1 1 0 001.414 0zm12.728 0l1.414-1.414a1 1 0 000-1.414l-1.414-1.414a1 1 0 00-1.414 1.414l1.414 1.414a1 1 0 001.414 0zm0 11.314l1.414 1.414a1 1 0 001.414-1.414l-1.414-1.414a1 1 0 00-1.414 1.414zM2.05 13.536a1 1 0 001.414 0l1.414-1.414a1 1 0 00-1.414-1.414L2.05 12.122a1 1 0 000 1.414zm10.657-1.414a1 1 0 00-1.414 1.414l1.414 1.414a1 1 0 001.414-1.414l-1.414-1.414zM10 18a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM3 10a1 1 0 11-2 0 1 1 0 012 0zm14 0a1 1 0 11-2 0 1 1 0 012 0z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            ) : (
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+              </svg>
+            )}
+          </button>
+        </div>
+
+        <p className={`text-sm uppercase tracking-[0.24em] ${isDark ? 'text-cyan-300/90' : 'text-blue-600/90'}`}>
+          Jeff Mayeur
+        </p>
+        <h1 className="mt-3 max-w-3xl text-balance text-4xl font-semibold leading-tight md:text-6xl">
+          Management Philosophy
+        </h1>
+        <p className={`mt-5 max-w-2xl text-pretty text-base leading-relaxed md:text-lg ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
+          Three principles that define how I lead: Clear Vision, Trust, and Expectation.
+        </p>
+
+        <nav aria-label="Page sections" className="mt-8 flex flex-wrap gap-2 sm:gap-3">
+          <a className="chip-link" href="#vision">Clear Vision</a>
+          <a className="chip-link" href="#trust">Trust</a>
+          <a className="chip-link" href="#expectation">Expectation</a>
+        </nav>
+      </header>
+
+      <main id="content" className="mx-auto grid w-full max-w-5xl gap-8 px-6 pb-16 md:px-10">
+
+        <section id="vision" aria-labelledby="vision-heading" className="panel">
+          <h2 id="vision-heading" className="panel-title">Clear Vision</h2>
+          <p className="panel-text">
+            As a leader it's my responsibility to ensure that the teams I support know the what, the why and have
+            a clear connection to the value they are creating. Throughout my career I am constantly reminded that a
+            team that believes in what they are doing will always outperform one that is simply taking tasks from a
+            list.
+          </p>
+        </section>
+
+        <section id="trust" aria-labelledby="trust-heading" className="panel">
+          <h2 id="trust-heading" className="panel-title">Trust</h2>
+          <p className="panel-text">
+            As a leader I need the teams I support to trust me. Trust is the speed-limit of work. Building trust
+            and credibility takes time, it takes practice but the benefits are unmatched. Trust has to go beyond
+            the internal teams &mdash; our customers have to trust me, and the teams. We have to show the customer
+            that we understand them, we feel their urgency and we want to succeed with them.
+          </p>
+        </section>
+
+        <section id="expectation" aria-labelledby="expectation-heading" className="panel">
+          <h2 id="expectation-heading" className="panel-title">Expectation</h2>
+          <p className="panel-text">
+            As a leader I need to state and restate what I expect of the teams I support. I also need to be clear
+            about what I expect from myself, and be willing to hold myself just as accountable as I hold the teams.
+            In a dynamic workspace, where requirements change, people change, goals change, expectation goes beyond
+            just hitting commitments. Expectations need to be defined on how we work, and evolve as a team.
+            Building on the Vision &amp; Trust, the role of leader is to create an environment where the core
+            expectation is ownership &mdash; that we collectively own evolving with and serving our customers at
+            the speed they work.
+          </p>
+        </section>
+
+      </main>
+    </div>
+  )
+}
+
+export default ManagementPhilosophyPage
