@@ -254,6 +254,9 @@ function App() {
             <Link className="chip-link" to="/web-development">
               Web Development
             </Link>
+            <Link className="chip-link" to="/agentic-flow">
+              Agentic Flow
+            </Link>
           </div>
         </section>
 

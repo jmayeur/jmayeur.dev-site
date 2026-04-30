@@ -4,10 +4,7 @@ import {
   createRouter,
 } from '@tanstack/react-router'
 import App from './App'
-import DataAnalyticsPage from './pages/DataAnalyticsPage'
-import ManagementPhilosophyPage from './pages/ManagementPhilosophyPage'
-import ObservabilityPage from './pages/ObservabilityPage'
-import WebDevelopmentPage from './pages/WebDevelopmentPage'
+import DeepDivePage from './pages/DeepDivePage'
 
 const rootRoute = createRootRoute()
 
@@ -20,25 +17,31 @@ const indexRoute = createRoute({
 const dataAnalyticsRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/data-analytics',
-  component: DataAnalyticsPage,
+  component: DeepDivePage,
 })
 
 const managementPhilosophyRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/management-philosophy',
-  component: ManagementPhilosophyPage,
+  component: DeepDivePage,
 })
 
 const observabilityRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/observability',
-  component: ObservabilityPage,
+  component: DeepDivePage,
 })
 
 const webDevelopmentRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/web-development',
-  component: WebDevelopmentPage,
+  component: DeepDivePage,
+})
+
+const agenticFlowRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/agentic-flow',
+  component: DeepDivePage,
 })
 
 const routeTree = rootRoute.addChildren([
@@ -47,6 +50,7 @@ const routeTree = rootRoute.addChildren([
   managementPhilosophyRoute,
   observabilityRoute,
   webDevelopmentRoute,
+  agenticFlowRoute,
 ])
 
 export const router = createRouter({

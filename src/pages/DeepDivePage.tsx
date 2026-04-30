@@ -1,7 +1,12 @@
 import React from 'react'
-import { Link } from '@tanstack/react-router'
+import { Link, useLocation } from '@tanstack/react-router'
+import { pageContent } from '../pageContent'
 
-function ManagementPhilosophyPage() {
+function DeepDivePage() {
+  const { pathname } = useLocation()
+  const slug = pathname.replace(/^\/|\/$/g, '')
+  const content = pageContent[slug]
+
   const [isDark, setIsDark] = React.useState(() => {
     if (typeof window === 'undefined') return true
     const stored = localStorage.getItem('theme')
@@ -15,14 +20,27 @@ function ManagementPhilosophyPage() {
     localStorage.setItem('theme', isDark ? 'dark' : 'light')
   }, [isDark])
 
-  const bgClass = isDark
-    ? 'bg-slate-950 text-slate-100'
-    : 'text-slate-900'
+  const bgClass = isDark ? 'bg-slate-950 text-slate-100' : 'text-slate-900'
 
   const darkGradient =
     'radial-gradient(circle at 20% 20%,rgba(56,189,248,0.15),transparent 28%),radial-gradient(circle at 80% 0%,rgba(251,146,60,0.15),transparent 26%),linear-gradient(135deg,#020617,#0f172a 45%,#111827)'
   const lightGradient =
     'radial-gradient(circle at 20% 20%,rgba(59,130,246,0.08),transparent 28%),radial-gradient(circle at 80% 0%,rgba(168,85,247,0.08),transparent 26%),linear-gradient(135deg,#faebd7,#f5e6d3 45%,#ecdcc8)'
+
+  if (!content) {
+    return (
+      <div className={`relative isolate min-h-screen flex items-center justify-center ${bgClass}`}>
+        <div
+          className="pointer-events-none absolute inset-0 -z-10"
+          style={{ backgroundImage: isDark ? darkGradient : lightGradient }}
+        />
+        <div className="text-center">
+          <p className={`text-lg ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>Page not found.</p>
+          <Link to="/" className="mt-4 inline-block underline text-sm">Back to Resume</Link>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className={`relative isolate min-h-screen overflow-x-clip ${bgClass}`}>
@@ -80,57 +98,67 @@ function ManagementPhilosophyPage() {
           Jeff Mayeur
         </p>
         <h1 className="mt-3 max-w-3xl text-balance text-4xl font-semibold leading-tight md:text-6xl">
-          Management Philosophy
+          {content.title}
+          {content.titleSuffix && (
+            <span className={`ml-3 text-2xl md:text-4xl font-normal ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
+              {content.titleSuffix}
+            </span>
+          )}
         </h1>
         <p className={`mt-5 max-w-2xl text-pretty text-base leading-relaxed md:text-lg ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
-          Three principles that define how I lead: Clear Vision, Trust, and Expectation.
+          {content.subtitle}
         </p>
 
         <nav aria-label="Page sections" className="mt-8 flex flex-wrap gap-2 sm:gap-3">
-          <a className="chip-link" href="#vision">Clear Vision</a>
-          <a className="chip-link" href="#trust">Trust</a>
-          <a className="chip-link" href="#expectation">Expectation</a>
+          {content.sections.map((section) => (
+            <a key={section.id} className="chip-link" href={`#${section.id}`}>
+              {section.heading}
+            </a>
+          ))}
         </nav>
       </header>
 
       <main id="content" className="mx-auto grid w-full max-w-5xl gap-8 px-6 pb-16 md:px-10">
+        {content.sections.map((section) => (
+          <section key={section.id} id={section.id} aria-labelledby={`${section.id}-heading`} className="panel">
+            <h2 id={`${section.id}-heading`} className="panel-title">
+              {section.heading}
+            </h2>
 
-        <section id="vision" aria-labelledby="vision-heading" className="panel">
-          <h2 id="vision-heading" className="panel-title">Clear Vision</h2>
-          <p className="panel-text">
-            As a leader it's my responsibility to ensure that the teams I support know the what, the why and have
-            a clear connection to the value they are creating. Throughout my career I am constantly reminded that a
-            team that believes in what they are doing will always outperform one that is simply taking tasks from a
-            list.
-          </p>
-        </section>
+            {section.paragraphs && section.paragraphs.map((para, i) => (
+              <p
+                key={i}
+                className={`panel-text${i > 0 ? ' mt-4' : ''}`}
+                // Content is static authored strings, never user input
+                dangerouslySetInnerHTML={{ __html: para }}
+              />
+            ))}
 
-        <section id="trust" aria-labelledby="trust-heading" className="panel">
-          <h2 id="trust-heading" className="panel-title">Trust</h2>
-          <p className="panel-text">
-            As a leader I need the teams I support to trust me. Trust is the speed-limit of work. Building trust
-            and credibility takes time, it takes practice but the benefits are unmatched. Trust has to go beyond
-            the internal teams &mdash; our customers have to trust me, and the teams. We have to show the customer
-            that we understand them, we feel their urgency and we want to succeed with them.
-          </p>
-        </section>
-
-        <section id="expectation" aria-labelledby="expectation-heading" className="panel">
-          <h2 id="expectation-heading" className="panel-title">Expectation</h2>
-          <p className="panel-text">
-            As a leader I need to state and restate what I expect of the teams I support. I also need to be clear
-            about what I expect from myself, and be willing to hold myself just as accountable as I hold the teams.
-            In a dynamic workspace, where requirements change, people change, goals change, expectation goes beyond
-            just hitting commitments. Expectations need to be defined on how we work, and evolve as a team.
-            Building on the Vision &amp; Trust, the role of leader is to create an environment where the core
-            expectation is ownership &mdash; that we collectively own evolving with and serving our customers at
-            the speed they work.
-          </p>
-        </section>
-
+            {section.badges && (
+              <ul className="flex flex-wrap gap-2 sm:gap-3 text-sm" aria-label={section.heading}>
+                {section.badges.map((badge) => (
+                  <li
+                    key={badge}
+                    className={`rounded-full border px-3 py-1.5 ${
+                      section.badgeVariant === 'orange'
+                        ? isDark
+                          ? 'border-orange-300/25 bg-orange-500/10 text-orange-100'
+                          : 'border-orange-300/40 bg-orange-100/30 text-orange-900'
+                        : isDark
+                          ? 'border-cyan-300/25 bg-cyan-500/10 text-cyan-100'
+                          : 'border-blue-300/40 bg-blue-100/30 text-blue-900'
+                    }`}
+                  >
+                    {badge}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </section>
+        ))}
       </main>
     </div>
   )
 }
 
-export default ManagementPhilosophyPage
+export default DeepDivePage
