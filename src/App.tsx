@@ -241,9 +241,6 @@ function App() {
           <h2 id="subpages-heading" className="panel-title">
             Deep Dives
           </h2>
-          <p className="panel-text">
-            Additional pages with more detail on core areas of focus.
-          </p>
           <div className="mt-5 flex flex-wrap gap-2 sm:gap-3 text-sm" aria-label="Profile deep dives">
             <Link className="chip-link" to="/data-analytics">
               Data &amp; Analytics
