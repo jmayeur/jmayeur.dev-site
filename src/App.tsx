@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from '@tanstack/react-router'
 
 const experience = [
   {
@@ -111,9 +112,6 @@ function App() {
             )}
           </button>
         </div>
-        <p className={`text-sm uppercase tracking-[0.24em] ${isDark ? 'text-cyan-300/90' : 'text-blue-600/90'}`}>
-          Professional Profile
-        </p>
         <h1 className="mt-3 max-w-3xl text-balance text-4xl font-semibold leading-tight md:text-6xl">
           Jeff Mayeur
         </h1>
@@ -158,6 +156,9 @@ function App() {
           </a>
           <a className="chip-link" href="#skills">
             Skills
+          </a>
+          <a className="chip-link" href="#subpages">
+            Deep Dives
           </a>
           <a className="chip-link" href="#activities">
             Activities
@@ -234,6 +235,29 @@ function App() {
               </li>
             ))}
           </ul>
+        </section>
+
+        <section id="subpages" aria-labelledby="subpages-heading" className="panel">
+          <h2 id="subpages-heading" className="panel-title">
+            Deep Dives
+          </h2>
+          <p className="panel-text">
+            Additional pages with more detail on core areas of focus.
+          </p>
+          <div className="mt-5 flex flex-wrap gap-2 sm:gap-3 text-sm" aria-label="Profile deep dives">
+            <Link className="chip-link" to="/data-analytics">
+              Data &amp; Analytics
+            </Link>
+            <Link className="chip-link" to="/management-philosophy">
+              Management Philosophy
+            </Link>
+            <Link className="chip-link" to="/observability">
+              Observability (O11y)
+            </Link>
+            <Link className="chip-link" to="/web-development">
+              Web Development
+            </Link>
+          </div>
         </section>
 
         <section id="activities" aria-labelledby="activities-heading" className="panel">
