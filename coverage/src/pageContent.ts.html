@@ -1,0 +1,583 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for src/pageContent.ts</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">src</a> pageContent.ts</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>1/1</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>0/0</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>0/0</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>1/1</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export interface PageSection {
+  id: string
+  heading: string
+  /** Each string may contain HTML (static authored content only — never user input) */
+  paragraphs?: string[]
+  badges?: string[]
+  badgeVariant?: 'cyan' | 'orange'
+}
+&nbsp;
+export interface PageContent {
+  title: string
+  /** Optional styled suffix appended to the h1, e.g. "(O11y)" */
+  titleSuffix?: string
+  subtitle: string
+  sections: PageSection[]
+}
+&nbsp;
+export const pageContent: Record&lt;string, PageContent&gt; = {
+  'data-analytics': {
+    title: 'Data &amp; Analytics',
+    subtitle: 'From stored procedures to Databricks — data is where it all comes back to.',
+    sections: [
+      {
+        id: 'background',
+        heading: 'Background',
+        paragraphs: [
+          'MS SQL &amp;amp; Stored Procedures was one of the first platforms where I really began to understand the application of design patterns, structure and programming flow. Of all the technologies I\'ve been able to work with across my career, Data is where it all comes back to. Data is the key that unlocks every downstream possibility, it\'s the foundation that unlocks opportunities for every aspect of a business.',
+          'Since that early exposure to using data to drive the business, I\'ve been able to work across the spectrum from RDBMS, to early data lakes built on Document Stores. As the technology has leapt forward to handle the modern data scale it\'s been a constant re-learning of technology from Redshift to Databricks, but the fundamentals remain the same.',
+          'Data has to fit the business need, whether it\'s driving insights with analytics or personalization via ML training, the technology has to follow purpose. Data Quality matters, cost matters, performance matters, but each of these decision planes needs to be vetted against the company objectives. Much like the Iron Triangle governs the limits of what software can be built, even in the age of Agents, the key to a successful Data &amp;amp; Analytics strategy is continual communication with stakeholders.',
+        ],
+      },
+      {
+        id: 'key-skills',
+        heading: 'Key Skills',
+        badges: [
+          'Client Instrumentation',
+          'Data Ingestion',
+          'Data Processing',
+          'Data Shaping',
+          'Analytics &amp; BI Reporting',
+          'Data Storage &amp; Mirroring',
+        ],
+        badgeVariant: 'cyan',
+      },
+      {
+        id: 'key-tech',
+        heading: 'Key Tech',
+        badges: [
+          'MSSQL',
+          'Oracle',
+          'Spark',
+          'Redshift',
+          'Databricks',
+          'Tableau',
+          'Adobe Analytics',
+          'Kafka',
+          'Amazon EMR',
+          'Amazon SQS',
+        ],
+        badgeVariant: 'orange',
+      },
+    ],
+  },
+&nbsp;
+  'management-philosophy': {
+    title: 'Management Philosophy',
+    subtitle: 'Three principles that define how I lead: Clear Vision, Trust, and Expectation.',
+    sections: [
+      {
+        id: 'vision',
+        heading: 'Clear Vision',
+        paragraphs: [
+          'As a leader it\'s my responsibility to ensure that the teams I support know the what, the why and have a clear connection to the value they are creating. Throughout my career I am constantly reminded that a team that believes in what they are doing will always outperform one that is simply taking tasks from a list.',
+        ],
+      },
+      {
+        id: 'trust',
+        heading: 'Trust',
+        paragraphs: [
+          'As a leader I need the teams I support to trust me. Trust is the speed-limit of work. Building trust and credibility takes time, it takes practice but the benefits are unmatched. Trust has to go beyond the internal teams &amp;mdash; our customers have to trust me, and the teams. We have to show the customer that we understand them, we feel their urgency and we want to succeed with them.',
+        ],
+      },
+      {
+        id: 'expectation',
+        heading: 'Expectation',
+        paragraphs: [
+          'As a leader I need to state and restate what I expect of the teams I support. I also need to be clear about what I expect from myself, and be willing to hold myself just as accountable as I hold the teams. In a dynamic workspace, where requirements change, people change, goals change, expectation goes beyond just hitting commitments. Expectations need to be defined on how we work, and evolve as a team. Building on the Vision &amp;amp; Trust, the role of leader is to create an environment where the core expectation is ownership &amp;mdash; that we collectively own evolving with and serving our customers at the speed they work.',
+        ],
+      },
+    ],
+  },
+&nbsp;
+  'observability': {
+    title: 'Observability',
+    titleSuffix: '(O11y)',
+    subtitle: 'Observability only creates value when the team can act on the signal.',
+    sections: [
+      {
+        id: 'philosophy',
+        heading: 'Philosophy',
+        paragraphs: [
+          'Observability is a trap, or it can be. It\'s too easy to focus on the tooling, and forget the purpose. Throw NewRelic or Splunk, OTEL, DataDog, Dynatrace or whatever platform you choose and log everything. Don\'t worry, the bill doesn\'t come due until later. A key lesson that I keep learning is that a signal is only useful if I can act on it.',
+          'When I think about how to consider O11y for a project, especially in Agentic O11y, I begin with what can I do with the insight. Take logging network call failures. Of course if a service is failing to reach a downstream system, or a user experience is failing to post data to some endpoint, we need to know so we can address the issue. Unfortunately there\'s always noise. Safari is especially hard on analytics and tracking services.',
+          'When I think about a problem like sorting signal from noise, I start with what would I expect to happen if I see a 2% spike in signal, what about 0.01%. The primary driving mindset is to think of O11y more like GPS than a smoke alarm. I want it to tell me how to keep on the right path, not cause panic. The worst thing that can happen to a team is when they have over-indexed on capturing every bit of data, and become inured to the sound of a PagerDuty alarm bell.',
+          'Fundamentally, O11y is about surfacing the insights from within the black boxes of complex multi-domain systems, but with the intent of keeping the lights on, not raising alarms.',
+        ],
+      },
+    ],
+  },
+&nbsp;
+  'web-development': {
+    title: 'Web Development',
+    subtitle: 'Create, iterate, and evolve: that has always been the core of why web development matters to me.',
+    sections: [
+      {
+        id: 'history',
+        heading: 'History',
+        paragraphs: [
+          'It started with &lt;a class="underline decoration-cyan-400/70 underline-offset-4 hover:decoration-cyan-300" href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest" target="_blank" rel="noreferrer"&gt;oXMLHTTPRequest&lt;/a&gt;. I had been noodling with HTML and JavaScript using Internet Explorer 4, and I came across that function. At the time I was working for a company that provided web-based employment applications. One aspect of these applications was a series of questions created by IO Psychologists to assess a candidate\'s fit for a role. These tests used an early Neural Network to evaluate the user\'s responses based on outcomes from previous applicants and their answers. QAing these tests was very time-consuming. Upon finding this function, it occurred to me that I could use structured data, XML, to encode various persona answers and use a testing frame to load that data, and auto-fill the web pages.',
+          'The creation of that testing harness was a formative moment for me. I unlocked 2 key insights that still drive me forward today. First, the web is fundamentally one of the most adaptive development spaces; even in this world of apps and mobile phones, web is still incredibly adaptable to new capabilities and fosters innovation through that flexibility. Second, software development at its best is about simplifying and accelerating.',
+        ],
+      },
+      {
+        id: 'technology',
+        heading: 'Technology',
+        paragraphs: [
+          'I will always love JavaScript. It was the first JIT language that felt like it could keep up with the way I wanted to continually iterate on a problem. React has come to dominate web application architecture and TypeScript has added some missing rigor in the upfront development phase, but in the end it\'s the fluidity and real-time feedback of web development that keeps me engaged 20 years later.',
+          'Agentic loops and tailored skills have shifted the how in many cases. I don\'t think I\'ll ever hand-code anything complex again. The goal is the same: create, iterate and evolve. That is the core of what makes web special to me and to the evolution of the software landscape.',
+        ],
+      },
+    ],
+  },
+&nbsp;
+  'agentic-flow': {
+    title: 'Agentic Flow',
+    subtitle: 'How Agents are shifting the world of digital product development — a view as of 4/30/2026.',
+    sections: [
+      {
+        id: 'disclaimer',
+        heading: 'Disclaimer',
+        paragraphs: [
+          'Keeping things tool agnostic, I wanted to share my general understanding of how Agents are shifting the world of digital product development. Like all things AI these days, this is my view as of 4/30/2026, and it will expire as soon as the next model/tool/convention drops which is right now.',
+        ],
+      },
+      {
+        id: 'philosophy-developer',
+        heading: 'Philosophy as a Developer',
+        paragraphs: [
+          'The way I work with and orchestrate Agents begins with the last mile. I focus on identifying what it takes to push code into production. I take my understanding of that process and use that insight to create specific skills and Agents to drive quality, security, accessibility, load and performance testing, or whatever is expected to ensure the quality and robustness of the built application.',
+          'From there I work upstream towards the creation, specification, and ideation with agents to execute, advise and research. The entire flow of an idea into a production application (PDLC) can be accelerated with Agents.',
+          'This shift has left me unmoored at times, if coding is done by an Agent, what do I do? If managing infrastructure, CI/CD and production monitoring is done by an Agent what do I do? For now the answer is in the Specification and Ideation phases. It\'s critical to bring any expertise I have further upstream. Without exception the higher the quality of the Specs, the higher the quality of the final application.',
+          'Crucial to this way of working is focusing on output/outcomes. If I can define my expectations with enough detail and to structure iterative Agentic review and validation cycles that focus on matching outputs to expected outcomes there is little need for me to write, or read the vast majority of code that is created.',
+          'There is a lot of tooling to help create and manage specifications in the world of Agentic-first development. I\'ve worked with several and there are reasons you might favor one over the other, but the most critical factor is less about the flavor of tooling and more about the time and thought cycles spent thinking about specifications.',
+        ],
+      },
+      {
+        id: 'philosophy-leader',
+        heading: 'Philosophy as a Leader',
+        paragraphs: [
+          'Currently there are two primary aspects that I think leaders need to be driving when it comes to thinking about Agentic PDLC. First, creating space for the change. It\'s difficult for anyone to relearn their job, and with the pace of change, mostly driven by compute power, teams will need to relearn their job on almost a monthly basis. Leadership should be focused on finding low-risk spaces for their teams to experiment with evolving every aspect of their digital product development flow. There needs to be an environment that balances the need to ship more today with the need to re-tool for tomorrow\'s ways-of-working.',
+          'Second, leaders need to be realistic. There\'s too much hype, and not enough proven value with AI. Yes it can shift some work into an automated flow, but the hard parts still exist. It\'s useless to create a new set of APIs if you don\'t have an end consumer to utilize them. Sure it might only take a day, but without a purpose AI is just a toy, not a tool. Leaders should be focused on getting teams to use their additional capacity to ideate more, not reduce capacity, or only emphasizing faster delivery. Leaders need to set expectations that AI can drive faster feedback loops and faster implementation, but that teams also need to be very comfortable throwing away bad ideas. In the end AI is really just a fantastic way to create a truly Agile workflow that unlocks the power of people and customer collaboration with incredible speed and fidelity.',
+        ],
+      },
+    ],
+  },
+}
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-05-01T17:29:47.406Z
+            </div>
+        <script src="../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../sorter.js"></script>
+        <script src="../block-navigation.js"></script>
+    </body>
+</html>
+    
