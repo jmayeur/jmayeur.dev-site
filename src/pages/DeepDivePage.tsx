@@ -35,8 +35,12 @@ function DeepDivePage() {
           style={{ backgroundImage: isDark ? darkGradient : lightGradient }}
         />
         <div className="text-center">
-          <p className={`text-lg ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>Page not found.</p>
-          <Link to="/" className="mt-4 inline-block underline text-sm">Back to Resume</Link>
+          <p className={`text-lg ${isDark ? 'text-slate-400' : 'text-slate-600'}`}>
+            Page not found.
+          </p>
+          <Link to="/" className="mt-4 inline-block underline text-sm">
+            Back to Resume
+          </Link>
         </div>
       </div>
     )
@@ -58,13 +62,16 @@ function DeepDivePage() {
           <Link
             to="/"
             className={`flex items-center gap-2 text-sm transition-colors ${
-              isDark
-                ? 'text-slate-400 hover:text-slate-200'
-                : 'text-slate-600 hover:text-slate-900'
+              isDark ? 'text-slate-400 hover:text-slate-200' : 'text-slate-600 hover:text-slate-900'
             }`}
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M15 19l-7-7 7-7"
+              />
             </svg>
             Back to Resume
           </Link>
@@ -94,18 +101,24 @@ function DeepDivePage() {
           </button>
         </div>
 
-        <p className={`text-sm uppercase tracking-[0.24em] ${isDark ? 'text-cyan-300/90' : 'text-blue-600/90'}`}>
+        <p
+          className={`text-sm uppercase tracking-[0.24em] ${isDark ? 'text-cyan-300/90' : 'text-blue-600/90'}`}
+        >
           Jeff Mayeur
         </p>
         <h1 className="mt-3 max-w-3xl text-balance text-4xl font-semibold leading-tight md:text-6xl">
           {content.title}
           {content.titleSuffix && (
-            <span className={`ml-3 text-2xl md:text-4xl font-normal ${isDark ? 'text-slate-400' : 'text-slate-500'}`}>
+            <span
+              className={`ml-3 text-2xl md:text-4xl font-normal ${isDark ? 'text-slate-400' : 'text-slate-500'}`}
+            >
               {content.titleSuffix}
             </span>
           )}
         </h1>
-        <p className={`mt-5 max-w-2xl text-pretty text-base leading-relaxed md:text-lg ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
+        <p
+          className={`mt-5 max-w-2xl text-pretty text-base leading-relaxed md:text-lg ${isDark ? 'text-slate-300' : 'text-slate-700'}`}
+        >
           {content.subtitle}
         </p>
 
@@ -120,19 +133,25 @@ function DeepDivePage() {
 
       <main id="content" className="mx-auto grid w-full max-w-5xl gap-8 px-6 pb-16 md:px-10">
         {content.sections.map((section) => (
-          <section key={section.id} id={section.id} aria-labelledby={`${section.id}-heading`} className="panel">
+          <section
+            key={section.id}
+            id={section.id}
+            aria-labelledby={`${section.id}-heading`}
+            className="panel"
+          >
             <h2 id={`${section.id}-heading`} className="panel-title">
               {section.heading}
             </h2>
 
-            {section.paragraphs && section.paragraphs.map((para, i) => (
-              <p
-                key={i}
-                className={`panel-text${i > 0 ? ' mt-4' : ''}`}
-                // Content is static authored strings, never user input
-                dangerouslySetInnerHTML={{ __html: para }}
-              />
-            ))}
+            {section.paragraphs &&
+              section.paragraphs.map((para, i) => (
+                <p
+                  key={i}
+                  className={`panel-text${i > 0 ? ' mt-4' : ''}`}
+                  // Content is static authored strings, never user input
+                  dangerouslySetInnerHTML={{ __html: para }}
+                />
+              ))}
 
             {section.badges && (
               <ul className="flex flex-wrap gap-2 sm:gap-3 text-sm" aria-label={section.heading}>

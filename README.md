@@ -46,7 +46,7 @@ Hosted on Azure Static Web Apps and connected to GitHub Actions for continuous d
 
 Use this quick flow whenever you update resume or profile content.
 
-1. Edit page content in `src/App.tsx`.
+1. Edit resume page content in `src/App.tsx` and deep-dive page content in `src/pageContent.ts`.
 2. If title/SEO text changed, update `index.html` (`<title>`, description, canonical URL if needed).
 3. Run local checks:
 
@@ -59,8 +59,8 @@ npm run build
 4. Commit and push to `main`.
 5. Confirm deployment in GitHub Actions.
 6. Smoke test production:
-	- https://jmayeur.dev
-	- https://www.jmayeur.dev (should redirect to apex)
+   - https://jmayeur.dev
+   - https://www.jmayeur.dev (should redirect to apex)
 
 If deployment fails, review the latest workflow logs in GitHub Actions first, then rerun after fixing.
 
@@ -95,4 +95,3 @@ Rollback Plan
 - Revert commit: <sha>
 - Confirm previous deployment is healthy
 ```
-

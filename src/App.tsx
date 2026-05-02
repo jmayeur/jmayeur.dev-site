@@ -70,12 +70,12 @@ function App() {
     localStorage.setItem('theme', isDark ? 'dark' : 'light')
   }, [isDark])
 
-  const bgClass = isDark 
-    ? 'bg-slate-950 text-slate-100' 
-    : 'text-slate-900'
-  
-  const darkGradient = 'radial-gradient(circle at 20% 20%,rgba(56,189,248,0.15),transparent 28%),radial-gradient(circle at 80% 0%,rgba(251,146,60,0.15),transparent 26%),linear-gradient(135deg,#020617,#0f172a 45%,#111827)'
-  const lightGradient = 'radial-gradient(circle at 20% 20%,rgba(59,130,246,0.08),transparent 28%),radial-gradient(circle at 80% 0%,rgba(168,85,247,0.08),transparent 26%),linear-gradient(135deg,#faebd7,#f5e6d3 45%,#ecdcc8)'
+  const bgClass = isDark ? 'bg-slate-950 text-slate-100' : 'text-slate-900'
+
+  const darkGradient =
+    'radial-gradient(circle at 20% 20%,rgba(56,189,248,0.15),transparent 28%),radial-gradient(circle at 80% 0%,rgba(251,146,60,0.15),transparent 26%),linear-gradient(135deg,#020617,#0f172a 45%,#111827)'
+  const lightGradient =
+    'radial-gradient(circle at 20% 20%,rgba(59,130,246,0.08),transparent 28%),radial-gradient(circle at 80% 0%,rgba(168,85,247,0.08),transparent 26%),linear-gradient(135deg,#faebd7,#f5e6d3 45%,#ecdcc8)'
 
   return (
     <div className={`relative isolate min-h-screen overflow-x-clip ${bgClass}`}>
@@ -83,8 +83,8 @@ function App() {
         Skip to main content
       </a>
 
-      <div 
-        className="pointer-events-none absolute inset-0 -z-10" 
+      <div
+        className="pointer-events-none absolute inset-0 -z-10"
         style={{ backgroundImage: isDark ? darkGradient : lightGradient }}
       />
 
@@ -94,8 +94,8 @@ function App() {
           <button
             onClick={() => setIsDark(!isDark)}
             className={`p-2 rounded-lg border transition-colors ${
-              isDark 
-                ? 'border-slate-600 bg-slate-800/50 hover:bg-slate-700/50 text-slate-300' 
+              isDark
+                ? 'border-slate-600 bg-slate-800/50 hover:bg-slate-700/50 text-slate-300'
                 : 'border-slate-300 bg-slate-200/50 hover:bg-slate-300/50 text-slate-700'
             }`}
             aria-label="Toggle dark mode"
@@ -103,7 +103,11 @@ function App() {
           >
             {isDark ? (
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l-2.12-2.12a1 1 0 00-1.414 1.414l2.12 2.12a1 1 0 001.414-1.414zM2.05 6.464a1 1 0 000-1.414L.636 3.636a1 1 0 00-1.414 1.414l1.414 1.414a1 1 0 001.414 0zm12.728 0l1.414-1.414a1 1 0 000-1.414l-1.414-1.414a1 1 0 00-1.414 1.414l1.414 1.414a1 1 0 001.414 0zm0 11.314l1.414 1.414a1 1 0 001.414-1.414l-1.414-1.414a1 1 0 00-1.414 1.414zM2.05 13.536a1 1 0 001.414 0l1.414-1.414a1 1 0 00-1.414-1.414L2.05 12.122a1 1 0 000 1.414zm10.657-1.414a1 1 0 00-1.414 1.414l1.414 1.414a1 1 0 001.414-1.414l-1.414-1.414zM10 18a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM3 10a1 1 0 11-2 0 1 1 0 012 0zm14 0a1 1 0 11-2 0 1 1 0 012 0z" clipRule="evenodd" />
+                <path
+                  fillRule="evenodd"
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l-2.12-2.12a1 1 0 00-1.414 1.414l2.12 2.12a1 1 0 001.414-1.414zM2.05 6.464a1 1 0 000-1.414L.636 3.636a1 1 0 00-1.414 1.414l1.414 1.414a1 1 0 001.414 0zm12.728 0l1.414-1.414a1 1 0 000-1.414l-1.414-1.414a1 1 0 00-1.414 1.414l1.414 1.414a1 1 0 001.414 0zm0 11.314l1.414 1.414a1 1 0 001.414-1.414l-1.414-1.414a1 1 0 00-1.414 1.414zM2.05 13.536a1 1 0 001.414 0l1.414-1.414a1 1 0 00-1.414-1.414L2.05 12.122a1 1 0 000 1.414zm10.657-1.414a1 1 0 00-1.414 1.414l1.414 1.414a1 1 0 001.414-1.414l-1.414-1.414zM10 18a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM3 10a1 1 0 11-2 0 1 1 0 012 0zm14 0a1 1 0 11-2 0 1 1 0 012 0z"
+                  clipRule="evenodd"
+                />
               </svg>
             ) : (
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -115,13 +119,17 @@ function App() {
         <h1 className="mt-3 max-w-3xl text-balance text-4xl font-semibold leading-tight md:text-6xl">
           Jeff Mayeur
         </h1>
-        <p className={`mt-5 max-w-2xl text-pretty text-base leading-relaxed md:text-lg ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
-          Technology leader with 20+ years across architecture, engineering
-          leadership, and hands-on delivery, focused on building systems that
-          unlock value for people.
+        <p
+          className={`mt-5 max-w-2xl text-pretty text-base leading-relaxed md:text-lg ${isDark ? 'text-slate-300' : 'text-slate-700'}`}
+        >
+          Technology leader with 20+ years across architecture, engineering leadership, and hands-on
+          delivery, focused on building systems that unlock value for people.
         </p>
 
-        <ul className={`mt-6 flex flex-wrap gap-2 sm:gap-3 text-sm ${isDark ? 'text-slate-200' : 'text-slate-800'}`} aria-label="Contact details">
+        <ul
+          className={`mt-6 flex flex-wrap gap-2 sm:gap-3 text-sm ${isDark ? 'text-slate-200' : 'text-slate-800'}`}
+          aria-label="Contact details"
+        >
           <li>
             <a className="chip-link" href="tel:+15034220865">
               503.422.0865
@@ -172,20 +180,17 @@ function App() {
             What I Bring
           </h2>
           <p className="panel-text">
-            There are four core ideas that define me. First, technology is the
-            tool, not the purpose. Second, learning is the start of everything;
-            I need to understand the space, the people, and the opportunity
-            before I can create value. Third, shift-left is for more than
-            security, accessibility, and quality - in the age of agents, it is
-            the entire product development lifecycle. Fourth, trust brings speed,
-            and speed grows value.
+            There are four core ideas that define me. First, technology is the tool, not the
+            purpose. Second, learning is the start of everything; I need to understand the space,
+            the people, and the opportunity before I can create value. Third, shift-left is for more
+            than security, accessibility, and quality - in the age of agents, it is the entire
+            product development lifecycle. Fourth, trust brings speed, and speed grows value.
           </p>
           <p className="panel-text mt-4">
-            Over the last 20 years, I have had opportunities across the stack:
-            from relational databases to Databricks, from WinForms and Java
-            applets to React experiences, and from under-desk datacenters to
-            cloud compute. I do my best work when I can collapse the timeline
-            between idea and interaction.
+            Over the last 20 years, I have had opportunities across the stack: from relational
+            databases to Databricks, from WinForms and Java applets to React experiences, and from
+            under-desk datacenters to cloud compute. I do my best work when I can collapse the
+            timeline between idea and interaction.
           </p>
         </section>
 
@@ -194,11 +199,10 @@ function App() {
             What I am Looking For
           </h2>
           <p className="panel-text">
-            My career has been a hybrid of management and technical leadership.
-            My ideal role fuses those strengths. I love systems - both people
-            and technology - and I am looking for opportunities where I can
-            mentor and grow others while staying hands-on in the technology
-            pipeline.
+            My career has been a hybrid of management and technical leadership. My ideal role fuses
+            those strengths. I love systems - both people and technology - and I am looking for
+            opportunities where I can mentor and grow others while staying hands-on in the
+            technology pipeline.
           </p>
         </section>
 
@@ -208,13 +212,26 @@ function App() {
           </h2>
           <ol className="grid gap-6" aria-label="Work history">
             {experience.map((job, index) => (
-              <li key={`${job.role}-${index}`} className={`rounded-xl border p-5 ${isDark ? 'border-slate-800/80 bg-slate-900/60' : 'border-slate-300/60 bg-slate-200/40'}`}>
+              <li
+                key={`${job.role}-${index}`}
+                className={`rounded-xl border p-5 ${isDark ? 'border-slate-800/80 bg-slate-900/60' : 'border-slate-300/60 bg-slate-200/40'}`}
+              >
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
-                  <h3 className={`text-lg font-semibold ${isDark ? 'text-slate-50' : 'text-slate-900'}`}>{job.role}</h3>
-                  <p className={`text-sm ${isDark ? 'text-cyan-200' : 'text-blue-600'}`}>{job.period}</p>
+                  <h3
+                    className={`text-lg font-semibold ${isDark ? 'text-slate-50' : 'text-slate-900'}`}
+                  >
+                    {job.role}
+                  </h3>
+                  <p className={`text-sm ${isDark ? 'text-cyan-200' : 'text-blue-600'}`}>
+                    {job.period}
+                  </p>
                 </div>
-                <p className={`mt-1 text-sm ${isDark ? 'text-orange-200' : 'text-orange-700'}`}>{job.company}</p>
-                <ul className={`mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed md:text-base ${isDark ? 'text-slate-300' : 'text-slate-700'}`}>
+                <p className={`mt-1 text-sm ${isDark ? 'text-orange-200' : 'text-orange-700'}`}>
+                  {job.company}
+                </p>
+                <ul
+                  className={`mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed md:text-base ${isDark ? 'text-slate-300' : 'text-slate-700'}`}
+                >
                   {job.points.map((point) => (
                     <li key={point}>{point}</li>
                   ))}
@@ -230,7 +247,10 @@ function App() {
           </h2>
           <ul className="flex flex-wrap gap-2 sm:gap-3 text-sm" aria-label="Core skills">
             {skills.map((skill) => (
-              <li key={skill} className={`rounded-full border px-3 py-1.5 ${isDark ? 'border-cyan-300/25 bg-cyan-500/10 text-cyan-100' : 'border-blue-300/40 bg-blue-100/30 text-blue-900'}`}>
+              <li
+                key={skill}
+                className={`rounded-full border px-3 py-1.5 ${isDark ? 'border-cyan-300/25 bg-cyan-500/10 text-cyan-100' : 'border-blue-300/40 bg-blue-100/30 text-blue-900'}`}
+              >
                 {skill}
               </li>
             ))}
@@ -241,7 +261,10 @@ function App() {
           <h2 id="subpages-heading" className="panel-title">
             Deep Dives
           </h2>
-          <div className="mt-5 flex flex-wrap gap-2 sm:gap-3 text-sm" aria-label="Profile deep dives">
+          <div
+            className="mt-5 flex flex-wrap gap-2 sm:gap-3 text-sm"
+            aria-label="Profile deep dives"
+          >
             <Link className="chip-link" to="/data-analytics">
               Data &amp; Analytics
             </Link>
@@ -265,11 +288,10 @@ function App() {
             Activities
           </h2>
           <p className="panel-text">
-            Outside of work I am passionate about family, skiing, hiking, and
-            biking. I have been in the Pacific Northwest for 25 years and thrive
-            in environments where the outdoors is right outside my door. I am
-            excited to continue learning and discovery as I explore what is
-            next.
+            Outside of work I am passionate about family, skiing, hiking, and biking. I have been in
+            the Pacific Northwest for 25 years and thrive in environments where the outdoors is
+            right outside my door. I am excited to continue learning and discovery as I explore what
+            is next.
           </p>
         </section>
       </main>
