@@ -37,6 +37,8 @@ If `prNumber` is not provided:
 gh pr list --state open --limit 1 --json number --jq '.[0].number'
 ```
 
+> **Tooling note:** `gh pr list` is safe for listing. Avoid `gh pr view` for fetching thread data — it opens an alternate buffer and output is not captured by agent tools.
+
 ## Procedure
 
 ### 1. Verify Prerequisites
@@ -45,33 +47,17 @@ gh pr list --state open --limit 1 --json number --jq '.[0].number'
 - Confirm repo root and current branch
 - Ensure local branch matches the PR head branch; switch if needed
 
-### 2. Fetch PR Metadata
+### 2. Fetch PR Metadata and Review Threads
 
-Get base/head and URL for summary reporting:
+**Use `github-pull-request_currentActivePullRequest(refresh:true)`** — this is the reliable path.
 
-```bash
-gh pr view <PR_NUMBER> --json number,title,url,baseRefName,headRefName,author
-```
+The tool result includes all needed fields:
+- `number`, `title`, `url`, `baseRefName`, `headRefName`, `author`
+- `reviewThreads[]` with: `id`, `isResolved`, `canResolve`, `file`, and nested `comments[].body`
 
-### 3. Fetch Review Threads and Comments (gh CLI)
+No separate `gh pr view` or `gh api graphql` call is needed for thread data.
 
-Use `gh api graphql` to retrieve unresolved review threads and comment details.
-
-Minimum required fields per thread:
-
-- `threadId`
-- `isResolved`
-- `path`
-- `line` / `originalLine`
-- `commentId`
-- `body`
-- `author`
-
-If only timeline-level comments are available, fetch issue comments too:
-
-```bash
-gh pr view <PR_NUMBER> --comments
-```
+> **Why not gh CLI?** `gh pr view` opens an alternate terminal buffer — output is not captured by agent tools. `gh api graphql` for threads has the same capture problem. Stick to the GitHub PR tool.
 
 ### 4. Evaluate Each Comment With a Reasoning Model
 
@@ -126,9 +112,11 @@ Response template:
 
 ### 8. Resolve Threads
 
-Preferred: use GitHub PR tools to resolve review threads when available.
+**Always use `github-pull-request_resolveReviewThread(threadId)`** with the thread `id` from step 2.
 
-If operating through gh GraphQL directly, resolve by thread ID after posting a reply.
+Do NOT use `gh api graphql addPullRequestReviewThreadReply` or `gh api graphql resolveReviewThread` — these have terminal capture issues and require extra round-trips.
+
+After resolving, call `github-pull-request_currentActivePullRequest(refresh:true)` to confirm `isResolved: true` before reporting.
 
 ### 9. Final Report
 
@@ -141,6 +129,16 @@ Return a concise summary:
 - Threads resolved
 - Any remaining blockers
 
+## Tooling Preferences (Proven)
+
+| Task | Use | Avoid |
+|------|-----|-------|
+| Fetch PR data + threads | `github-pull-request_currentActivePullRequest(refresh:true)` | `gh pr view` (alternate buffer, output not captured) |
+| Resolve a thread | `github-pull-request_resolveReviewThread(threadId)` | `gh api graphql` mutations (capture issues) |
+| Search codebase | `grep_search` / `file_search` tools | `rg` (not available in this environment) |
+| List open PRs | `gh pr list ...` | — |
+| Confirm threads resolved | `github-pull-request_currentActivePullRequest(refresh:true)`, check `isResolved: true` | — |
+
 ## Safety Rules
 
 - Never use destructive git commands
@@ -148,3 +146,4 @@ Return a concise summary:
 - Never resolve unclear comments without clarification
 - Never perform unrelated refactors while addressing feedback
 - If quality gate fails, stop, report, and do not resolve that thread yet
+- After all commits, run `git status` — stage and commit any new untracked files created during the session in a separate commit
