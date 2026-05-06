@@ -265,6 +265,9 @@ function App() {
             className="mt-5 flex flex-wrap gap-2 sm:gap-3 text-sm"
             aria-label="Profile deep dives"
           >
+            <Link className="chip-link" to="/projects">
+              Projects
+            </Link>
             <Link className="chip-link" to="/data-analytics">
               Data &amp; Analytics
             </Link>
