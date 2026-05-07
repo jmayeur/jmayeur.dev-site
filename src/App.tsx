@@ -5,7 +5,7 @@ const experience = [
   {
     company: 'Nike Inc',
     role: 'Sr Principal / Distinguished Engineer',
-    period: 'May 2022 - Apr 2026',
+    period: 'Nov 2021 - Apr 2026',
     points: [
       'Provided leadership across Paid Marketing Digital Integration and the Digital Experience Experimentation offense.',
       'Contributed technical expertise and helped map tools to the goal of connecting with Athletes on a personal level.',
@@ -14,7 +14,7 @@ const experience = [
   {
     company: 'Nike Inc',
     role: 'Engineering Director',
-    period: 'Mar 2018 - Apr 2022',
+    period: 'Mar 2018 - Oct 2021',
     points: [
       'Led Discover and Shop experience teams as they moved beyond cloud migration to deliver increasingly resilient experiences.',
       'Challenged teams to continuously improve, own domains, and prioritize the Athletes they serve.',
