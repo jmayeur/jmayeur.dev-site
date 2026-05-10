@@ -1,0 +1,24 @@
+# Jeff Mayeur
+
+> Technology leader with 20+ years across architecture, engineering leadership, and hands-on delivery. Focused on building systems that unlock value for people.
+
+Jeff Mayeur is a Sr Principal / Distinguished Engineer who spent 18 years at Nike Inc across roles including Lead Engineer, Principal Engineer, Sr Engineering Manager, Engineering Director, and Sr Principal / Distinguished Engineer. He specializes in web development, data & analytics, observability, engineering leadership, and agentic AI development workflows.
+
+## Profile
+
+- [Home / Resume](https://jmayeur.dev/): Full professional profile, experience timeline, skills, and contact information
+- [Projects](https://jmayeur.dev/projects): Detailed case studies of key projects at Nike including Digital Experience Experimentation, On-Platform Targeted Campaign Migration, and Nike.com Platform Evolution
+
+## Deep Dives
+
+- [Data & Analytics](https://jmayeur.dev/data-analytics): Philosophy and approach to data — from stored procedures to Databricks. Covers RDBMS, data lakes, Redshift, Spark, Kafka, and modern data platforms.
+- [Management Philosophy](https://jmayeur.dev/management-philosophy): Three principles that define Jeff's leadership approach: Clear Vision, Trust, and Expectation.
+- [Observability (O11y)](https://jmayeur.dev/observability): Philosophy on building observable systems — treating observability like GPS navigation rather than a smoke alarm. Covers OTEL, NewRelic, Splunk, DataDog, Dynatrace.
+- [Web Development](https://jmayeur.dev/web-development): 20+ years of web development history and current approach. Covers React, TypeScript, JavaScript, and the evolution toward agentic-assisted development.
+- [Agentic Flow](https://jmayeur.dev/agentic-flow): How AI agents are shifting digital product development as of mid-2026. Perspectives as both a developer and a leader on the agentic PDLC.
+
+## Contact
+
+- Email: jmayeur@icloud.com
+- Phone: 503.422.0865
+- LinkedIn: https://www.linkedin.com/in/jeff-mayeur

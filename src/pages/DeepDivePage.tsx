@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, useLocation } from '@tanstack/react-router'
 import { pageContent } from '../pageContent'
+import { setPageMeta } from '../seo'
 
 function DeepDivePage() {
   const { pathname } = useLocation()
@@ -13,6 +14,15 @@ function DeepDivePage() {
     if (stored) return stored === 'dark'
     return true
   })
+
+  React.useEffect(() => {
+    if (!content) return
+    setPageMeta({
+      title: `${content.title} | Jeff Mayeur`,
+      description: content.subtitle,
+      url: `https://jmayeur.dev/${slug}`,
+    })
+  }, [content, slug])
 
   React.useEffect(() => {
     document.documentElement.classList.toggle('dark', isDark)
