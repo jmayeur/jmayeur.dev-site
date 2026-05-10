@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from '@tanstack/react-router'
+import { setPageMeta } from './seo'
 
 const experience = [
   {
@@ -65,7 +66,15 @@ function App() {
   })
 
   React.useEffect(() => {
-    document.documentElement.classList.toggle('dark', isDark)
+    setPageMeta({
+      title: 'Jeff Mayeur',
+      description:
+        'Jeff Mayeur — Technology leader with 20+ years across architecture, engineering leadership, and hands-on delivery. Focused on building systems that unlock value for people.',
+      url: 'https://jmayeur.dev/',
+    })
+  }, [])
+
+  React.useEffect(() => {
     document.documentElement.classList.toggle('light', !isDark)
     localStorage.setItem('theme', isDark ? 'dark' : 'light')
   }, [isDark])

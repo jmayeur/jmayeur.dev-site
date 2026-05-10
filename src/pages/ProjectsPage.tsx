@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from '@tanstack/react-router'
 import { projects } from '../projectsContent'
+import { setPageMeta } from '../seo'
 
 function ProjectsPage() {
   const [isDark, setIsDark] = React.useState(() => {
@@ -11,6 +12,15 @@ function ProjectsPage() {
   })
 
   const [activeIdx, setActiveIdx] = React.useState(0)
+
+  React.useEffect(() => {
+    setPageMeta({
+      title: 'Projects | Jeff Mayeur',
+      description:
+        "Key projects from Jeff Mayeur's career at Nike, including Digital Experience Experimentation, On-Platform Targeted Campaign Migration, and Nike.com Platform Evolution.",
+      url: 'https://jmayeur.dev/projects',
+    })
+  }, [])
 
   React.useEffect(() => {
     document.documentElement.classList.toggle('dark', isDark)
