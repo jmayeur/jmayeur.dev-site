@@ -1,0 +1,13 @@
+{
+  "routes": [
+    {
+      "route": "/.well-known/atproto-did",
+      "headers": {
+        "Content-Type": "text/plain"
+      }
+    }
+  ],
+  "mimeTypes": {
+    ".did": "text/plain"
+  }
+}
