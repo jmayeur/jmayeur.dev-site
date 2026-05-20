@@ -7,6 +7,25 @@
       }
     }
   ],
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": [
+      "/.well-known/*",
+      "/*.css",
+      "/*.js",
+      "/*.json",
+      "/*.ico",
+      "/*.png",
+      "/*.jpg",
+      "/*.jpeg",
+      "/*.gif",
+      "/*.svg",
+      "/*.webp",
+      "/*.txt",
+      "/*.map",
+      "/assets/*"
+    ]
+  },
   "mimeTypes": {
     ".did": "text/plain"
   }
