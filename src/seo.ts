@@ -12,10 +12,16 @@ export function setPageMeta({ title, description, url }: PageMeta): void {
     if (el) el.content = value
   }
 
+  const setLinkHref = (selector: string, value: string) => {
+    const el = document.querySelector<HTMLLinkElement>(selector)
+    if (el) el.href = value
+  }
+
   set('meta[name="description"]', description)
   set('meta[property="og:title"]', title)
   set('meta[property="og:description"]', description)
   set('meta[property="og:url"]', url)
   set('meta[name="twitter:title"]', title)
   set('meta[name="twitter:description"]', description)
+  setLinkHref('link[rel="canonical"]', url)
 }
