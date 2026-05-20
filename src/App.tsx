@@ -75,6 +75,7 @@ function App() {
   }, [])
 
   React.useEffect(() => {
+    document.documentElement.classList.toggle('dark', isDark)
     document.documentElement.classList.toggle('light', !isDark)
     localStorage.setItem('theme', isDark ? 'dark' : 'light')
   }, [isDark])
