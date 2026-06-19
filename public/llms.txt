@@ -1,8 +1,8 @@
 # Jeff Mayeur
 
-> Technology leader with 20+ years across architecture, engineering leadership, and hands-on delivery. Focused on building systems that unlock value for people.
+> Technology leader with 20+ years across architecture, engineering leadership, and hands-on delivery. Deep expertise in agentic AI concepts, agentic development, and enterprise AI adoption, focused on building systems that unlock value for people.
 
-Jeff Mayeur is a Sr Principal / Distinguished Engineer who spent 18 years at Nike Inc across roles including Lead Engineer, Principal Engineer, Sr Engineering Manager, Engineering Director, and Sr Principal / Distinguished Engineer. He specializes in web development, data & analytics, observability, engineering leadership, and agentic AI development workflows.
+Jeff Mayeur is a technology leader and Nike Inc alumnus, where he spent 18 years across roles including Lead Engineer, Principal Engineer, Sr Engineering Manager, Engineering Director, and Sr Principal / Distinguished Engineer. He specializes in agentic AI development, enterprise AI adoption, web development, data & analytics, observability, and engineering leadership, most recently reimagining an agentic-first product development lifecycle (PDLC).
 
 ## Profile
 
