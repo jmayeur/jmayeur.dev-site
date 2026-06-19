@@ -10,6 +10,9 @@ const experience = [
     points: [
       'Provided leadership across Paid Marketing Digital Integration and the Digital Experience Experimentation offense.',
       'Contributed technical expertise and helped map tools to the goal of connecting with Athletes on a personal level.',
+      'Designed a flexible integration and instrumentation framework that enabled an above-industry-standard experiment win rate across paid marketing and digital experience initiatives.',
+      'Introduced an agentic-first delivery model and drove enterprise AI adoption across the team, applying agentic AI concepts and validation cycles to reduce lead times for new capability deployment from months to weeks.',
+      'Drove AI modernization and adoption of agentic engineering practices across large enterprise teams, coaching engineers hands-on to operate with greater autonomy and speed in delivering personalized athlete experiences.',
     ],
   },
   {
@@ -51,6 +54,10 @@ const experience = [
 ]
 
 const skills = [
+  'Agentic-Driven Development',
+  'Agentic AI Concepts',
+  'Enterprise AI Adoption',
+  'Product Development Lifecycle (PDLC)',
   '15+ years leading cross-functional development teams',
   '20+ years focusing on creating user value',
   '15+ years architecting full stack solutions across varied products',
@@ -69,7 +76,7 @@ function App() {
     setPageMeta({
       title: 'Jeff Mayeur',
       description:
-        'Jeff Mayeur — Technology leader with 20+ years across architecture, engineering leadership, and hands-on delivery. Focused on building systems that unlock value for people.',
+        'Jeff Mayeur — Technology leader with 20+ years across architecture, engineering leadership, and hands-on delivery. Deep expertise in agentic AI concepts, agentic development, and enterprise AI adoption, focused on building systems that unlock value for people.',
       url: 'https://jmayeur.dev/',
     })
   }, [])
@@ -133,7 +140,10 @@ function App() {
           className={`mt-5 max-w-2xl text-pretty text-base leading-relaxed md:text-lg ${isDark ? 'text-slate-300' : 'text-slate-700'}`}
         >
           Technology leader with 20+ years across architecture, engineering leadership, and hands-on
-          delivery, focused on building systems that unlock value for people.
+          delivery, focused on building systems that unlock value for people. Deep expertise in
+          agentic AI concepts, agentic development, and enterprise AI adoption — most recently
+          reimagining an agentic-first PDLC with automation and looping checkpoints that keep
+          quality high along the full journey.
         </p>
 
         <ul
