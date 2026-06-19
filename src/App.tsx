@@ -20,7 +20,8 @@ const experience = [
     role: 'Engineering Director',
     period: 'Mar 2018 - Oct 2021',
     points: [
-      'Led Discover and Shop experience teams as they moved beyond cloud migration to deliver increasingly resilient experiences.',
+      'Led 50+ engineers across the Discover and Shop experience teams as they moved beyond cloud migration to deliver increasingly resilient, scalable digital experiences.',
+      'Championed a common WebShell platform that unlocked supporting teams to extend and experiment on user experiences in days instead of months.',
       'Challenged teams to continuously improve, own domains, and prioritize the Athletes they serve.',
     ],
   },
@@ -39,6 +40,7 @@ const experience = [
     period: 'Mar 2008 - Jul 2017',
     points: [
       'Supported global sales wholesale Nike.net platform and sales tools in multiple engineering capacities.',
+      'Led one of Nike’s first fully agile delivery pipelines, taking a sales planning tool from inception to completion in 90 days.',
       'Focused on full stack engineering and enabling teams to create composed experiences.',
     ],
   },
@@ -168,6 +170,16 @@ function App() {
               rel="noreferrer"
             >
               LinkedIn
+            </a>
+          </li>
+          <li>
+            <a
+              className="chip-link"
+              href="https://iguessthatworks.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Musings
             </a>
           </li>
         </ul>
