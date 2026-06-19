@@ -172,6 +172,16 @@ function App() {
               LinkedIn
             </a>
           </li>
+          <li>
+            <a
+              className="chip-link"
+              href="https://iguessthatworks.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Musings
+            </a>
+          </li>
         </ul>
 
         <nav aria-label="Primary" className="mt-8 flex flex-wrap gap-2 sm:gap-3">

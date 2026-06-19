@@ -17,6 +17,10 @@ Jeff Mayeur is a technology leader and Nike Inc alumnus, where he spent 18 years
 - [Web Development](https://jmayeur.dev/web-development): 20+ years of web development history and current approach. Covers React, TypeScript, JavaScript, and the evolution toward agentic-assisted development.
 - [Agentic Flow](https://jmayeur.dev/agentic-flow): How AI agents are shifting digital product development as of mid-2026. Perspectives as both a developer and a leader on the agentic PDLC.
 
+## Writing
+
+- [Musings](https://iguessthatworks.com): Jeff's personal blog with writing and reflections on technology, engineering, and agentic AI.
+
 ## Contact
 
 - Contact: Please use the contact information available on [Home / Resume](https://jmayeur.dev/)
