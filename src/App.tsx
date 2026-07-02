@@ -78,7 +78,7 @@ function App() {
     setPageMeta({
       title: 'Jeff Mayeur',
       description:
-        'Jeff Mayeur — Technology leader with 20+ years across architecture, engineering leadership, and hands-on delivery. Deep expertise in agentic AI concepts, agentic development, and enterprise AI adoption, focused on building systems that unlock value for people.',
+        'Jeff Mayeur — Principal Engineer building global consumer experiences at 100M+ user scale. Technical leader with 20+ years across architecture, engineering leadership, and hands-on delivery, expert at collapsing the timeline between idea and interaction.',
       url: 'https://jmayeur.dev/',
     })
   }, [])
@@ -139,13 +139,21 @@ function App() {
           Jeff Mayeur
         </h1>
         <p
+          className={`mt-4 max-w-2xl text-sm font-semibold uppercase tracking-wide md:text-base ${isDark ? 'text-sky-300' : 'text-sky-700'}`}
+        >
+          Principal Engineer | Global Consumer Experiences @ 100M+ User Scale
+        </p>
+        <p
           className={`mt-5 max-w-2xl text-pretty text-base leading-relaxed md:text-lg ${isDark ? 'text-slate-300' : 'text-slate-700'}`}
         >
-          Technology leader with 20+ years across architecture, engineering leadership, and hands-on
-          delivery, focused on building systems that unlock value for people. Deep expertise in
-          agentic AI concepts, agentic development, and enterprise AI adoption — most recently
-          reimagining an agentic-first PDLC with automation and looping checkpoints that keep
-          quality high along the full journey.
+          Technical leader with 20+ years across architecture, engineering leadership, and hands-on
+          delivery, building global consumer experiences for products serving hundreds of millions
+          of users. Expert at collapsing the timeline between idea and interaction, with range
+          spanning relational databases to Databricks, WinForms to React, and on-premise datacenters
+          to services on AWS. Most recently I've led the migration from monolith to distributed
+          systems and built custom agentic development harnesses — contractual agentic gates,
+          task-specific contexts, and targeted learning capture — to accelerate the entire digital
+          product delivery lifecycle.
         </p>
 
         <ul
